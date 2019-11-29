@@ -23,6 +23,7 @@ include '../templates/cabecera_anteslogin.php';
         <input type="submit" name="btnlog" value="Enviar" class="btn btn-primary" />
         <input type="reset" name="borrar" value="Borrar" class="btn btn-primary" />
         <br>
+        <br>
         <?php
 			//FEEDBACK para incorrecto
 			if (isset($_GET["fallo1"]) && ($_GET["fallo1"]) == 'true') {
