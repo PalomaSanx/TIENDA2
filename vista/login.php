@@ -35,7 +35,7 @@ include '../templates/cabecera_anteslogin.php';
 
 
     <!--JAVA SCRIPT-->
-    <!--<script src="https://account.snatchbot.me/script.js"></script><script>window.sntchChat.Init(74039)</script> -->
+    <script src="https://account.snatchbot.me/script.js"></script><script>window.sntchChat.Init(74039)</script>
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
