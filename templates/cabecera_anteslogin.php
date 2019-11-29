@@ -20,7 +20,7 @@ session_destroy();
     <!--Navegación-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.php">
+            <a class="navbar-brand" href="../index.php">
                 <p>TACHBOT</p>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
@@ -29,7 +29,7 @@ session_destroy();
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ml-auto">
-                    <a class="nav-item nav-link" href="index.php">Home</a>
+                    <a class="nav-item nav-link" href="../index.php">Home</a>
                     <a class="nav-item nav-link" href="vista/login.php">LOGIN <span class="sr-only">(current)</span></a>
                 </div>
             </div>
