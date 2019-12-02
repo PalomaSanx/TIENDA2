@@ -30,7 +30,9 @@ include 'templates/cabecera.php';
             <div class="col-sm-3" >
                 <div class="card" >
                     <img src=img/usuario.jpg style="width:30%">
-                    <a style="color:blue" href="controlador/consultaProductos.php">Mis pedidos</a>
+                    <a href="vista/formularioModDatos.php">Modificacion datos</a>
+                    <a href="controlador/consultaProductos.php">Mis pedidos</a>
+                    <a href="vista/ayuda.html">Ayuda</a>
                 </div>
             </div>        
             <div class="col-sm-9" >
