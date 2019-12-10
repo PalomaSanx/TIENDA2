@@ -72,6 +72,7 @@ include 'templates/cabecera.php';
                 </div>
             </div>
             <?php  } ?>
+            
         </div>
 
     <?php } ?>
@@ -81,4 +82,5 @@ include 'templates/cabecera.php';
             $('[data-toggle="popover"]').popover()
         });
         </script>
+        
 <?php include 'templates/pie.php';?>

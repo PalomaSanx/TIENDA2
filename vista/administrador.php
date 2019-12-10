@@ -5,7 +5,9 @@ include '../global/conexion.php';
 include '../templates/cabecera_admin.php';
 ?>
 
+
 <?php
+
         ###################################################################
         //----------Comprobamos sesion y si es administrador-----//
         ###################################################################
@@ -28,39 +30,93 @@ include '../templates/cabecera_admin.php';
                 window.location.assign("login.php"); </script>';
             }
         }
+        
+
+    
+
+
+        echo '<h5 class="card-title">Bienvenid@ a la página de administración de Tachbot: '.$_SESSION['correo'].'</h5> ';
+        echo ' <div class="col-12">';
+            echo '<div class="card">';
+                echo '<input class="btn btn-primary" type="submit" name="" value="Mostrar XML:servicio" onclick="mostrar();">';
+            echo '</div>';
+            echo '<div class="card">';
+                echo '<input class="btn btn-primary" type="submit" name="" value="Insertar XML:servicio" onclick="insertar();">';
+            echo '</div>';
+             echo '<div class="card">';
+                echo '<input class="btn btn-primary" type="submit" name="" value="Añadir servicio a XML" onclick="añadir();">';
+            echo '</div>';
+            echo '<div class="card">';
+                echo '<input class="btn btn-primary" type="submit" name="" value="Eliminar servicio XML (XML)" onclick="eliminar();">';
+            echo '</div>';
+            echo '<form action="administrador.php" method="POST">
+                    <br><input type="submit" name="limpiar" value="Limpiar" class="btn btn-primary" id="limpiar" />
+                    </form>';
+
+        echo '</div>';
+
+        echo '<div class= "container" id="mostrarXML">';   
+        echo '</div>';
+
+        echo '<div align="center" class= "container" id="formularioInsertarServicio">';   
+        echo '</div>';
+
+        if (isset($_GET["añadir"]) && $_GET["añadir"] == 'true') {
+            echo "</br><div align='center' style='color:blue'>Servicio añadido a la BBDD Tachbot.<br> Recuerda incluir la imagen en la carpeta /img</div>";
+        }
+
+        if (isset($_GET["eliminar"]) && $_GET["eliminar"] == 'true') {
+            echo "</br><div align='center' style='color:blue'>Servicio eliminado en la BBDD Tachbot.<br></div>";
+        }
+
+
+        if (isset($_POST["limpiar"])) {
+            header('Location: ../vista/administrador.php'); 
+        }
+
+
+
+
+ } ?>
 
         
-        echo '<h5 class="card-title">Bienvenid@ a la página de administración de Tachbot: '.$_SESSION['correo'] .'</h5> ';
-        ###################################################################
-        //-----------------XML muestra el contenido de: xml servicios---------------//
-        ###################################################################
-        $archivo = simplexml_load_file("../xml/servicio.xml");
-        echo "<br><h5>DATOS DEL XML 'SERVICIOS'</h5>";
-        foreach ($archivo as $indice=>$servicio){
-            echo "Nombre: ".$servicio->nombre."<br>";
-            echo "Id: ".$servicio->id_servicio."<br>";
-            echo "Precio: ".$servicio->precio."<br>";
-            echo "Descripcion: ".$servicio->descripcion."<br>";
-            echo "Imagen: ".$servicio->imagen."<br>";
-        echo "----------------------------------------------- <br>";
-        }
-       
- } ?>
 
 <!--
         ##########################################################################################
-        //---------AJAX que llama a funcion php para insertar XML en la tabla (BBDD)------------//
+        //---------AJAX que llama a funciones php para realizar consultas en la BBDD------------//
         #########################################################################################
 -->
 
-<input type="submit" name="" value="Insertar XML:servicio" onclick="insertar();">
+
 <script src="../js/jquery-3.4.1.js"></script>
+
+<script>
+function mostrar() {
+    $.ajax({
+        type: 'POST', //aqui puede ser igual get
+        url: '../xml/funcionesAdmin.php', //aqui va tu direccion donde esta tu funcion php
+        dataType: 'html',
+        data: {'func' : 'mostrar'},
+        success: function(data) {
+            //lo que devuelve tu archivo mifuncion.php
+            jQuery('#mostrarXML').html(data);
+            
+        },
+        error: function(data) {
+            //lo que devuelve si falla tu archivo mifuncion.php
+            alert(data);
+        }
+    });
+}
+</script>
+
 <script>
 function insertar() {
     $.ajax({
         type: 'POST', //aqui puede ser igual get
         url: '../xml/funcionesAdmin.php', //aqui va tu direccion donde esta tu funcion php
-        //data: $(this).serialize(),
+        dataType: 'html',
+        data: {'func' : 'insertar'},
         success: function(data) {
             //lo que devuelve tu archivo mifuncion.php
             alert(data);
@@ -72,5 +128,43 @@ function insertar() {
     });
 }
 </script>
+
+<script>
+function añadir() {
+    $.ajax({
+        type: 'POST', //aqui puede ser igual get
+        url: '../xml/funcionesAdmin.php', //aqui va tu direccion donde esta tu funcion php
+        dataType: 'html',
+        data: {'func' : 'añadir'},
+        success: function(data) {
+            //lo que devuelve tu archivo mifuncion.php
+            jQuery('#formularioInsertarServicio').html(data);
+        },
+        error: function(data) {
+            //lo que devuelve si falla tu archivo mifuncion.php
+            alert(data);
+        }
+    });
+}
+</script>
+
+<script>
+function eliminar() {
+    $.ajax({
+        type: 'POST', //aqui puede ser igual get
+        url: '../xml/funcionesAdmin.php', //aqui va tu direccion donde esta tu funcion php
+        data: {'func' : 'eliminar'},
+        success: function(data) {
+            //lo que devuelve tu archivo mifuncion.php
+            jQuery('#formularioInsertarServicio').html(data);
+        },
+        error: function(data) {
+            //lo que devuelve si falla tu archivo mifuncion.php
+            alert(data);
+        }
+    });
+}
+</script>
+
 
 <?php include '../templates/pie.php';?>
