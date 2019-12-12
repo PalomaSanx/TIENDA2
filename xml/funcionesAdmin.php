@@ -87,20 +87,22 @@ elseif($_POST['func']=='insertar'){
 elseif($_POST['func']=='añadir'){
     try {
         echo '
+        <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-4">
         <form action="../xml/funcionesAdmin.php" method="POST" id="formulario">
             Introduzca nombre:<br>
-            <input type="text" name="nombre" required id="nombre" required/><br><br>
+            <input class="form-control" type="text" name="nombre" required id="nombre" required/><br><br>
             Introduzca precio:<br>
-            <input type="integer"  name="precio" id="precio" required /><br><br>
+            <input class="form-control" type="integer"  name="precio" id="precio" required /><br><br>
             Introduzca descripción:<br>
-            <input type="text" name="descripcion" id="descripcion" required /><br><br>
+            <input class="form-control" type="text" name="descripcion" id="descripcion" required /><br><br>
             Introduzca imagen:<br>
-            <input type="text" name="imagen" id="imagen" required /><br><br>
+            <input class="form-control" type="text" name="imagen" id="imagen" required /><br><br>
         
             <br>
             <input type="submit" name="Enviar" value="Enviar" class="btn btn-primary" id="Enviar" />
             <input type="reset" name="borrar" value="Borrar" class="btn btn-primary" />
-        </form>';
+        </form>
+        </div>';
         
     } catch (Exception $e) {
         echo $e->getMessage();
@@ -110,12 +112,14 @@ elseif($_POST['func']=='añadir'){
 elseif($_POST['func']=='eliminar'){
     try {
         
-            echo 'introduce el nombre del servicio a eliminar: 
+            echo '<div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6">
+            introduce el nombre del servicio a eliminar: 
             <form action="../xml/funcionesAdmin.php" method="POST">
-                 <input type="text" size="40" maxlength="64" name="nombre" required id="nombre" /><br>
+                 <input class="form-control" type="text" size="40" maxlength="64" name="nombre" required id="nombre" /><br>
                  <br>
                  <input type="submit" name="Enviar2" value="Enviar" class="btn btn-primary" id="Enviar2" />
-            </form>';
+            </form>
+            </div>';
         
     } catch (Exception $e) {
         echo $e->getMessage();

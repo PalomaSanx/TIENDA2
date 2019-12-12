@@ -22,12 +22,12 @@ include 'templates/cabecera_anteslogin.php';
 							<ul class="slides">
 								<li>
 									<p class="home-slide-content">
-										<strong>creativos</strong> pasión
+										<strong>creativos</strong> pasion
 									</p>
 								</li>
 								<li>
 									<p class="home-slide-content">
-										diseño<strong>tecnología</strong>
+										diseño<strong>tecnologia</strong>
 									</p>
 								</li>
 								<li>
@@ -82,8 +82,8 @@ include 'templates/cabecera_anteslogin.php';
 			<div class="row">
 				<div class="span2 offset1 flyIn">
 					<div class="people">
-						<img class="team-thumb img-circle" src="img/team/img-1.jpg" alt="" />
-						<h3>Juan Pablo Egido Castellanos</h3>
+						<img class="team-thumb img-circle" src="img/team/juan.jpg" alt="" />
+						<h3>Juan Pablo Egido</h3>
 						<p>
 							Desarrollo Web
 						</p>
@@ -91,7 +91,7 @@ include 'templates/cabecera_anteslogin.php';
 				</div>
 				<div class="span2 flyIn">
 					<div class="people">
-						<img class="team-thumb img-circle" src="img/team/img-2.jpg" alt="" />
+						<img class="team-thumb img-circle" src="img/team/rocio.jpg" alt="" />
 						<h3>Rocio Saelices</h3>
 						<p>
 							Diseño UI
@@ -100,7 +100,7 @@ include 'templates/cabecera_anteslogin.php';
 				</div>
 				<div class="span2 flyIn">
 					<div class="people">
-						<img class="team-thumb img-circle" src="img/team/img-3.jpg" alt="" />
+						<img class="team-thumb img-circle" src="img/team/paloma.jpg" alt="" />
 						<h3>Paloma Sánchez</h3>
 						<p>
 							Desarrollo Web
@@ -109,8 +109,8 @@ include 'templates/cabecera_anteslogin.php';
 				</div>
 				<div class="span2 flyIn">
 					<div class="people">
-						<img class="team-thumb img-circle" src="img/team/img-4.jpg" alt="" />
-						<h3>ShioHato</h3>
+						<img class="team-thumb img-circle" src="img/team/shioato.jpg" alt="" />
+						<h3>Rocio  Diéguez</h3>
 						<p>
 							Diseño UI
 						</p>
@@ -157,7 +157,7 @@ include 'templates/cabecera_anteslogin.php';
 				<div class="col-3">
 					<div class="service-box">
 						<img src="img/ecommerce.png" alt="" width="70%"/>
-						<h2>Potencia tu proyecto eommerce</h2>
+						<h2>Potencia tu proyecto eCommerce</h2>
 						<p>
 							Utiliza esta maravillosa herramienta para potenciar tu e-commerce. 
 						</p>
@@ -368,11 +368,8 @@ include 'templates/cabecera_anteslogin.php';
 			<div class="row">
 				<div class="span12 aligncenter flyLeft">
 					<blockquote class="large">
-						We are an established and trusted web agency with a reputation for commitment and high integrity
+						Somos una agencia web establecida y confiable con una reputación de compromiso y alta integridad.
 					</blockquote>
-				</div>
-				<div class="span12 aligncenter flyRight">
-					<i class="icon-rocket icon-10x"></i>
 				</div>
 			</div>
 		</div>
@@ -381,7 +378,7 @@ include 'templates/cabecera_anteslogin.php';
 	<!-- section: blog -->
 	<section id="blog" class="section">
 		<div class="container" align="center">
-			<h4>¿Donde estamos?</h4>
+			<h4>¿Donde nos encontramos?</h4>
 			<!-- Three columns -->
 			<div id='map' style="width: 600px; height: 400px;">
 			</div>
@@ -475,7 +472,6 @@ include 'templates/cabecera_anteslogin.php';
 	<script src="js/animate.js"></script>
 	<script src="js/custom.js"></script>
 	<script src="js/contactform.js"></script>
-	<script src="https://account.snatchbot.me/script.js"></script><script>window.sntchChat.Init(74039)</script> 
 	<script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
 	
 	<!--JS del mapa 'donde estamos', carga el mapa según DOM (id map)-->
@@ -491,7 +487,7 @@ include 'templates/cabecera_anteslogin.php';
 			
 			L.control.scale().addTo(map);
 			//L.marker([38.9942400, -1.8564300], {draggable: true}).addTo(map);	
-		    L.marker([38.9942400, -1.8564300]).addTo(map).bindPopup("<b>Sede principal Chatbot").openPopup();
+		    L.marker([38.9942400, -1.8564300]).addTo(map).bindPopup("<b>Sede principal Tachbot").openPopup();
 			
 	</script>
  

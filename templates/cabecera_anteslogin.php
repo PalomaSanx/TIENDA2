@@ -17,17 +17,17 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </head>
 
-    <body style="background-color:lightblue">
+    <body >
         <!--Navegación-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
                 <a class="navbar-brand" href="<?php echo url ;?>/index.php">
-                    <img src="<?php echo url ;?>/img/Logo.png" alt="" width="8%" />
+                    <img src="<?php echo url ;?>/img/Logo.png" alt="" width="5%" />
                 </a>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav ml-auto">
                         <a class="nav-item nav-link" href="<?php echo url ;?>/index.php">Home</a>
-                        <a class="nav-item nav-link" href="<?php echo url ;?>/vista/login.php">LOGIN <span class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link" href="<?php echo url ;?>/vista/login.php">Login</a>
                     </div>
                 </div>
             </div>

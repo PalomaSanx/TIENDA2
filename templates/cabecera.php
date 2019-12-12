@@ -18,7 +18,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="indexLogin.php">
-                <p>TACHBOT</p>
+                 <img src="<?php echo url ;?>/img/Logo.png" alt="" width="5%" />
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,10 +26,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ml-auto">
-                    <a class="nav-item nav-link" href="indexLogin.php">Home</a>
-                    <a class="nav-item nav-link" href="micuenta.php">Mi cuenta<span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link" href="index.php">Logout<span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link" href="mostrarCarrito.php">Carrito(<?php echo (empty($_SESSION['carrito'])?0:count($_SESSION['carrito']));?>)</a>
+                    <a class="nav-item nav-link" href="<?php echo url ;?>/indexLogin.php">Home</a>
+                    <a class="nav-item nav-link" href="<?php echo url ;?>/micuenta.php">Micuenta<span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="<?php echo url ;?>/index.php">Logout<span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="<?php echo url ;?>/mostrarCarrito.php">Carrito(<?php echo (empty($_SESSION['carrito'])?0:count($_SESSION['carrito']));?>)</a>
                 </div>
             </div>
         </div>
