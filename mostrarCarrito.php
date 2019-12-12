@@ -32,10 +32,10 @@ include 'templates/cabecera.php';
 <h3>Lista del carrito</h3>
 <?php if(!empty($_SESSION['carrito'])){?>
 
-<table class="table table-bordered">
+<table class="table">
     <tbody>
         <!--cabecera de la tabla-->
-        <tr>
+        <tr style="background-color:lightgreen">
             <th width="40%">Descripción</th>
             <th width="15%" class="text-center">Cantidad</th>
             <th width="20%" class="text-center">Precio</th>

@@ -40,6 +40,9 @@ include '../templates/cabecera_anteslogin.php';
 			//FEEDBACK para incorrecto
 			if (isset($_GET["fallo1"]) && ($_GET["fallo1"]) == 'true') {
 				echo "</br><div align='center' style='color:red'>Error al registrar.<br>Vuelva a intentarlo</div>";
+            }
+            if (isset($_GET["fallo2"]) && ($_GET["fallo2"]) == 'true') {
+				echo "</br><div align='center' style='color:red'>El correo ya existe.<br>Pruebe inciar sesión.</div>";
 			}
 			?>
             </form>

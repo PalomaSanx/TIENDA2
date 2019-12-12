@@ -16,8 +16,7 @@ session_start();
         <div class="panel panel-info">
             <div class="panel-heading">
                 <div class="panel-title">Recuperar Password</div>
-                <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="login.php">Iniciar
-                        Sesi&oacute;n</a></div>
+                <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="cambiopass.php">modificar contraseña</a></div>
             </div>
 
             <div style="padding-top:30px" class="panel-body">
@@ -50,3 +49,5 @@ session_start();
         </div>
     </div>
 </div>
+
+<?php include '../templates/pie.php';?>
