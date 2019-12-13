@@ -31,7 +31,29 @@
             <precio>50</precio>
             <descripcion>Chatbot destinado a empresas</descripcion>
             <imagen>ecommerce.png</imagen>
-        </servicio>        
+        </servicio>   
+        <servicio>
+            <nombre>HBtraductor</nombre>
+            <id_servicio>5</id_servicio>
+            <precio>10</precio>
+            <descripcion>Incluye la habilidad de traducir a tu Chatbot</descripcion>
+            <imagen>english.png</imagen>
+        </servicio> 
+        <servicio>
+            <nombre>HBmatemáticas</nombre>
+            <id_servicio>6</id_servicio>
+            <precio>10</precio>
+            <descripcion>Incluye la habilidad de cálculo a tu Chatbot</descripcion>
+            <imagen>maths.png</imagen>
+        </servicio> 
+        <servicio>
+            <nombre>HBalarma</nombre>
+            <id_servicio>7</id_servicio>
+            <precio>10</precio>
+            <descripcion>Incluye la habilidad de alarma a tu Chatbot</descripcion>
+            <imagen>alarm.png</imagen>
+        </servicio> 
+     
 
         <!--
         <servicio>

@@ -167,4 +167,3 @@ function eliminar() {
 </script>
 
 
-<?php include '../templates/pie.php';?>

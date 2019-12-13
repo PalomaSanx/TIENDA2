@@ -457,9 +457,6 @@ include 'templates/cabecera_anteslogin.php';
             </div>
         </div>
     </div>
-    </div>
-    </div>
-    <!-- ./container -->
 </footer>
 
 <script src="js/jquery.js"></script>

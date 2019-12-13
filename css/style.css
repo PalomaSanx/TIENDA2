@@ -1008,10 +1008,13 @@ div.cform-response-output {
 ============================================================ */
 
 footer {
-	background: #2b2b2b;
+	background: #065158;
 	text-align: center;
 	color: #ddd;
 	padding:50px 0 50px;
+	height: 300px;
+	position: relative;
+	left: 0; bottom: 0; width: 100%;
 }
 
 footer a {
