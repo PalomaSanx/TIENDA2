@@ -16,7 +16,8 @@ include 'templates/cabecera.php';
         $total+=($producto['precio']*$producto['cantidad']);
     }
     //inserta en la tabla venta la informacion 
-    $sentencia=$pdo->prepare("INSERT INTO `pedido` (`id_cli`, `fecha_pedido`, `fecha_expiracion`, `precio_total`, `id_pedido`, `reclamacion`, `correo`) VALUES (:id_cli, NOW(), NOW(), :precio_total, NULL, '0', :correo);");
+
+    $sentencia=$pdo->prepare("INSERT INTO `pedido` (`id_cli`, `fecha_pedido`, `fecha_expiracion`, `precio_total`, `id_pedido`, `reclamacion`, `correo`) VALUES (:id_cli, NOW(), DATE(DATE_ADD(now(), INTERVAL 1 YEAR)), :precio_total, NULL, '0', :correo);");
     $sentencia->bindParam(":id_cli",$id_cliente);
     $sentencia->bindParam(":precio_total",$total);
     $sentencia->bindParam(":correo",$correo);
@@ -55,26 +56,24 @@ include 'templates/cabecera.php';
               echo  '<input type="hidden" name="item_number_'.$count.'" value="'.$producto['id'].'">';
               echo  '<input type="hidden" name="amount_'.$count.'" value="'.$producto['precio'].'">';
               echo  '<input type="hidden" name="quantity_'.$count.'" value="1">';	
+              echo  '<input type="hidden" name="tax_'.$count.'" value="'.($producto['precio']*"0.21").'">';
             } ?>
 			<input type="hidden" name="business" value="tachbot-seller@business.example.com">			
 			<input type="hidden" name="return" value="http://localhost/proyecto/php/tienda2/pagoconexito.php">
 			<input type="hidden" name="cancel_return" value="http://localhost/proyecto/php/tienda2/pagocancelado.php">
 			<input type="hidden" name="no_note" value="1">
 			<input type="hidden" name="currency_code" value="EUR">
-			<input type="hidden" name="first_name" value="nombrecomprador">
-			<input type="hidden" name="last_name" value="apellidocomprador">
-			<input type="hidden" name="address1" value="avda. Espa">
-			<input type="hidden" name="city" value="albacete">
+			<input type="hidden" name="first_name" value="<?php echo $_SESSION['nombre']?>">
+			<input type="hidden" name="address1" value="avda. Alba">
+			<input type="hidden" name="city" value="<?php echo $_SESSION['ciudad']?>">
 			<input type="hidden" name="zip" value="02004">
 			<input type="hidden" name="lc" value="es">
-			<input type="hidden" name="tax_1" value="2">
-			<input type="hidden" name="tax_2" value="4">
 			<input type="hidden" name="country" value="ES">
             <input type="image" src="https://www.paypalobjects.com/webstatic/es_MX/mktg/logos-buttons/redesign/btn_10.png" name="submit" alt="Pagos con PayPal: Rápido, gratis y seguro">
 		</form>
     </p>
     <p>Los productos podrán ser descargados una vez que se procese el pago. <br /><strong>*si tiene alguna duda envienos
-            un mensaje a: tachbo7@gmail.com</strong></p>
+            un mensaje a: tachbot7@gmail.com</strong></p>
 </div>
 
 

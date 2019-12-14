@@ -19,7 +19,7 @@ include '../templates/cabecera_admin.php';
             $ahora = time();
             $antes = $_SESSION['ultimoAcceso'];
             $_SESSION['ultimoAcceso'] = $ahora;
-            if ($ahora - $antes > 3600) {
+            if ($ahora - $antes > 900) {
                 $_SESSION = array(); //eliminamos las variables de sesión
                 session_destroy();
                 //eliminamos las cookies de sesión:
@@ -35,7 +35,7 @@ include '../templates/cabecera_admin.php';
     
 
 
-        echo '<h5 class="card-title">Bienvenid@ a la página de administración de Tachbot: '.$_SESSION['correo'].'</h5> ';
+        echo '<blockquote class="large"><b>Bienvenid@ a la página de administración de Tachbot:</b> <i>'.$_SESSION['correo'].'</i></blockquote> ';
         echo ' <div class="col-12">';
             echo '<div class="card">';
                 echo '<input class="btn btn-primary" type="submit" name="" value="Mostrar XML:servicio" onclick="mostrar();">';
@@ -67,6 +67,9 @@ include '../templates/cabecera_admin.php';
 
         if (isset($_GET["eliminar"]) && $_GET["eliminar"] == 'true') {
             echo "</br><div align='center' style='color:blue'>Servicio eliminado en la BBDD Tachbot.<br></div>";
+        }
+        if (isset($_GET["eliminar"]) && $_GET["eliminar"] == 'false') {
+            echo "</br><div align='center' style='color:red'>El servicio introducido no existe en la BBDD Tachbot.<br></div>";
         }
 
 

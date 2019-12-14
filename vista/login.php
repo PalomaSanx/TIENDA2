@@ -58,13 +58,18 @@ include '../templates/cabecera_anteslogin.php';
                         </div>
                     </div>
                 </form>
+                <br>
+                <br>
+                <br>
                 <?php
 			//FEEDBACK para incorrecto
 			if (isset($_GET["fallo1"]) && $_GET["fallo1"] == 'true') {
-				echo "</br><div align='center' style='color:red'>Usuario o contraseña invalido.<br>Vuelva a intentarlo</div>";
+                echo "</br><div align='center' style='color:red'>Usuario o contraseña invalido.<br>Vuelva a intentarlo</div>";
+                echo '<br>';
             }
             if (isset($_GET["fallo2"]) && $_GET["fallo2"] == 'true') {
-				echo "</br><div align='center' style='color:red'>Captcha incorrecto.<br>Vuelva a intentarlo</div>";
+                echo "</br><div align='center' style='color:red'>Captcha incorrecto.<br>Vuelva a intentarlo</div>";
+                echo '<br>';
 			}
 			?>
             </div>

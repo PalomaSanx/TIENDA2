@@ -57,10 +57,10 @@
 
         <!--
         <servicio>
-            <nombre>CB</nombre>
-            <id_servicio>4</id_servicio>
-            <precio>35</precio>
-            <descripcion>Chatbot destinado a ....</descripcion>
+            <nombre>HB...</nombre>
+            <id_servicio>8</id_servicio>
+            <precio>1</precio>
+            <descripcion>Incluye la habilidad de ... a tu Chatbot.</descripcion>
             <imagen>icon.ico</imagen>
         </servicio>
         -->

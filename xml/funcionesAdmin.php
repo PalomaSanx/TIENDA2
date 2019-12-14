@@ -5,11 +5,19 @@ include '../global/conexion.php';
 
 
 if(isset($_POST['Enviar2'])){
-
     $nombre = $_POST['nombre'];
-    $sentencia = $pdo->prepare("DELETE FROM `servicio` WHERE nombre='$nombre';");
-    $sentencia->execute();
-    header('Location: ../vista/administrador.php?eliminar=true'); 
+    $sql_select = "SELECT * FROM servicio WHERE nombre='$nombre';";
+    $resultado_select = $pdo->query($sql_select); 
+    $servicio_select = $resultado_select->fetch(PDO::FETCH_ASSOC); 
+    if ($servicio_select['nombre']==$nombre) { 
+
+        $nombre = $_POST['nombre'];
+        $sentencia = $pdo->prepare("DELETE FROM `servicio` WHERE nombre='$nombre';");
+        $sentencia->execute();
+        header('Location: ../vista/administrador.php?eliminar=true'); 
+    }else{
+        header('Location: ../vista/administrador.php?eliminar=false'); 
+    }
 }
 
 if(isset($_POST['Enviar'])){

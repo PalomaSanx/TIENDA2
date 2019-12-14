@@ -40,6 +40,8 @@ if ($_POST["g-recaptcha-response"]) {
 					if (password_verify($_POST["contrasena"], $usuario_select['contrasena'])) { /* Si las contraseñas coinciden */
 						$_SESSION["correo"] = $_POST["correo"]; /* Guardamos la sesion del usuario */
 						$_SESSION["id_cliente"] = $usuario_select["id_cliente"];
+						$_SESSION["nombre"] = $usuario_select["nombre"];
+						$_SESSION["ciudad"] = $usuario_select["ciudad"];
 						$_SESSION["ultimoAcceso"] = time();
 						$_SESSION['administrador'] = $usuario_select['administrador'];
 						if(isset($_POST['recordar'])) { /* Si decide recordar cookies la guardamos*/ 

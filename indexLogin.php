@@ -7,14 +7,15 @@ include 'templates/cabecera.php';
 
 <?php
     if (!isset($_SESSION['correo'])) {
-        echo '<div align="center" class="card" style="background-color:lightblue">';
-        echo 'ERROR!! debe registrarse: <a href="vista/login.php"> Login </a> </div>';
+        echo '<div align="center" class="card">';
+        echo 'ERROR!! debe registrarse: <a href="vista/login.php"> Iniciar Sesión </a> </div>';
+        echo '<br>';
     } else { //si la sesión existe 
         if (isset($_SESSION['ultimoAcceso'])) { //comprueba que no haya pasado x tiempo desde la sesion
             $ahora = time();
             $antes = $_SESSION['ultimoAcceso'];
             $_SESSION['ultimoAcceso'] = $ahora;
-            if ($ahora - $antes > 3600) {
+            if ($ahora - $antes > 900) {
                 $_SESSION = array(); //eliminamos las variables de sesión
                 session_destroy();
                 //eliminamos las cookies de sesión:
@@ -25,7 +26,7 @@ include 'templates/cabecera.php';
                 window.location.assign("vista/login.php"); </script>';
             }
         }
-        echo '<h5 class="card-title">Bienvenid@ a Tachbot: '.$_SESSION['correo'] .'</h5> ';
+        echo '<h5 class="card-title">Bienvenid@ a Tachbot: <i>'.$_SESSION['correo'] .'</i></h5> ';
     
     ?>
 
@@ -70,6 +71,7 @@ include 'templates/cabecera.php';
                         </form>
                     </div>
                 </div>
+                <br>
             </div>
             <?php  } ?>
             

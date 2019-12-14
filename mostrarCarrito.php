@@ -7,14 +7,15 @@ include 'templates/cabecera.php';
 
 <?php //comprobamos que que se haya logueado (sesion)
     if (!isset($_SESSION['correo'])) {
-        echo '<div align="center" class="card" style="background-color:lightblue">';
-        echo 'ERROR!! debe registrarse: <a href="vista/login.php"> Login </a> </div>';
+        echo '<div align="center" class="card">';
+        echo 'ERROR!! debe registrarse: <a href="vista/login.php"> Iniciar sesión </a> </div>';
+        echo '<br>';
     } else { //si la sesión existe 
         if (isset($_SESSION['ultimoAcceso'])) { //comprueba que no haya pasado x tiempo desde la sesion
             $ahora = time();
             $antes = $_SESSION['ultimoAcceso'];
             $_SESSION['ultimoAcceso'] = $ahora;
-            if ($ahora - $antes > 3600) {
+            if ($ahora - $antes > 900) {
                 $_SESSION = array(); //eliminamos las variables de sesión
                 session_destroy();
                 //eliminamos las cookies de sesión:
@@ -93,5 +94,16 @@ include 'templates/cabecera.php';
 <?php } ?>
 <?php } ?>
 
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <?php include 'templates/pie.php';?>
