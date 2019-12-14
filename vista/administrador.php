@@ -12,8 +12,8 @@ include '../templates/cabecera_admin.php';
         //----------Comprobamos sesion y si es administrador-----//
         ###################################################################
     if (!isset($_SESSION['correo']) ||  $_SESSION['administrador']==false) { //comprobamos que se haya logueado como administrador
-        echo '<div align="center" class="card" style="background-color:lightblue">';
-        echo 'ERROR!! debe registrarse con una cuenta válida: <a href="login.php"> Login </a> </div>';
+        echo '<div align="center" class="card" ">';
+        echo 'ERROR!! debe registrarse con una cuenta válida: <a href="login.php"> Iniciar sesión </a> </div>';
     } else { //si la sesión existe 
         if (isset($_SESSION['ultimoAcceso'])) { //comprueba que no haya pasado x tiempo desde la sesion
             $ahora = time();

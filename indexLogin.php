@@ -84,5 +84,7 @@ include 'templates/cabecera.php';
             $('[data-toggle="popover"]').popover()
         });
         </script>
+
+<script src="https://account.snatchbot.me/script.js"></script><script>window.sntchChat.Init(74039)</script> 
         
 <?php include 'templates/pie.php';?>

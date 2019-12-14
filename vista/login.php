@@ -85,7 +85,7 @@ include '../templates/cabecera_anteslogin.php';
 <script src='https://www.google.com/recaptcha/api.js?hl=es'></script>
 
 
-
+<script src="https://account.snatchbot.me/script.js"></script><script>window.sntchChat.Init(74039)</script> 
 
 
 </body>
