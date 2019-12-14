@@ -6,7 +6,7 @@ session_start();
 
 if(!empty($_POST))
 	{
-		$destinatario = $_POST['correo'];
+		$destinatario = test_input($_POST['correo']);
 		
 		$sql_select = "SELECT * FROM cliente WHERE correo='" . $_POST["correo"] . "'"; /* Seleccionar el cliente que se corresponde al usuario introducido */
         $resultado_select = $pdo->query($sql_select); /* Realizamos la consulta y almacenamos en resultado_select */
@@ -15,7 +15,7 @@ if(!empty($_POST))
             echo 'El correo introducido no existe. Introduce un correo válido.';
         }else{
             
-        $_SESSION["correoRecu"] = $_POST['correo'];
+        $_SESSION["correoRecu"] = test_input($_POST['correo']);
         //$pass=$usuario_select['contrasena'];
         $token = bin2hex(random_bytes(16));
 

@@ -9,7 +9,7 @@ include 'templates/cabecera.php';
 <?php if($_POST){
     $total=0; //lo que se le va a acobrar al ususraio
     $SID= session_id();
-    $correo=$_POST['email'];
+    $correo=test_input($_POST['email']);
     $id_cliente=$_SESSION["id_cliente"];
     $count=0;
     foreach($_SESSION['carrito'] as $indice=>$producto){

@@ -38,7 +38,7 @@ if ($_POST["g-recaptcha-response"]) {
 				if ($resultado_select) { /* Si hay resultado */
 					$usuario_select = $resultado_select->fetch(PDO::FETCH_ASSOC); /* Recorremos las consultas */
 					if (password_verify($_POST["contrasena"], $usuario_select['contrasena'])) { /* Si las contraseñas coinciden */
-						$_SESSION["correo"] = $_POST["correo"]; /* Guardamos la sesion del usuario */
+						$_SESSION["correo"] = test_input($_POST["correo"]); /* Guardamos la sesion del usuario */
 						$_SESSION["id_cliente"] = $usuario_select["id_cliente"];
 						$_SESSION["nombre"] = $usuario_select["nombre"];
 						$_SESSION["ciudad"] = $usuario_select["ciudad"];

@@ -5,12 +5,13 @@ session_start();
 
 if(!empty($_POST))
 	{
-		$correo = $_POST['correo'];
-        $nombre = $_POST['nombre'];
-        $mensaje = $_POST['mensaje'];
+		$correo = test_input($_POST['correo']);
+        $nombre = test_input($_POST['nombre']);
+        $mensaje = test_input($_POST['mensaje']). ".El correo del cliente es: ".$correo;
+
 
         $destinatario = 'tachbot7@gmail.com';
-        $asunto = 'Mensaje posible cliente: '.$_POST['asunto'];
+        $asunto = 'Mensaje posible cliente: '.test_input($_POST['asunto']);
      
         if(mail($destinatario,$asunto,$mensaje)){
             echo "<div class='container' style='color:blue'><br>El mensaje ha sido enviado con exito. En breves recibirá una respuesta.<br>

@@ -5,10 +5,10 @@ include '../global/conexion.php';
 ?>
 
 <?php
-$nombre = $_POST["nombre"];
-$ciudad = $_POST["ciudad"];
-$telefono = $_POST["telefono"];
-$correo = $_POST["correo"];
+$nombre = test_input($_POST["nombre"]);
+$ciudad = test_input($_POST["ciudad"]);
+$telefono = test_input($_POST["telefono"]);
+$correo = test_input($_POST["correo"]);
 $administrador = false;
 $contrasena = password_hash($_POST["contrasena"], PASSWORD_DEFAULT);
 

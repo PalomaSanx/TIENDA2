@@ -6,9 +6,9 @@ session_start();
 
 if(!empty($_POST))
 	{
-        $codigo = $_POST['codigo'];
-        $contrasena1 = $_POST['contrasena'];
-        $contrasena2 = $_POST['con_contrasena'];
+        $codigo = test_input($_POST['codigo']);
+        $contrasena1 = test_input($_POST['contrasena']);
+        $contrasena2 = test_input($_POST['con_contrasena']);
 		
 		$sql_select = "SELECT token FROM cliente WHERE correo='" . $_SESSION['correoRecu'] . "'"; /* Seleccionar el cliente que se corresponde al usuario introducido */
         $resultado_select = $pdo->query($sql_select); /* Realizamos la consulta y almacenamos en resultado_select */

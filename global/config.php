@@ -8,4 +8,12 @@ define ("PASSWORD", "");
 define ("BD", "tachbot");
 define ("url", "http://localhost/proyecto/php/tienda2");
 
+
+function test_input($cadena) {
+    $dato = trim($cadena);
+    $dato = strip_tags($cadena);
+    $dato = htmlspecialchars($cadena);
+    return $cadena;
+}
+
 ?>
