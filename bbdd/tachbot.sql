@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-12-2019 a las 11:53:25
+-- Tiempo de generación: 14-12-2019 a las 14:04:33
 -- Versión del servidor: 10.4.6-MariaDB
 -- Versión de PHP: 7.3.9
 
@@ -35,19 +35,33 @@ CREATE TABLE `cliente` (
   `correo` varchar(20) DEFAULT NULL,
   `contrasena` varchar(100) NOT NULL,
   `id_cliente` int(11) NOT NULL,
-  `administrador` tinyint(1) NOT NULL
+  `administrador` tinyint(1) NOT NULL,
+  `token` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `cliente`
 --
 
-INSERT INTO `cliente` (`nombre`, `ciudad`, `telefono`, `correo`, `contrasena`, `id_cliente`, `administrador`) VALUES
-('paloma', '', 0, 'paloma@gmail.com', '$2y$10$9nF1PXH9T/7ECebeaAKpruUhbXxt6C3WwVWoqvZKvM4aItiLSx/5e', 1, 1),
-('', '', 0, 'pepe@gmail.com', '$2y$10$2LVmQLvNmFN6R2fhX.b4UeQAgJeYghYQqRoRXGUkL1qA9a95HrqfK', 9, 0),
-('', '', 0, 'antonio@gmail.com', '$2y$10$kDlHSlgCPm7bN7.xvbDiUOhfRDJDJlVbGZWL1oScpt1IOBgCOPvja', 10, 0),
-('', '', 0, 'prueba@gmail.com', '$2y$10$oUyvfFf.LNwdLlIo5WBlF.ngqnbTR6UVFOVwI9UbhNO/baItwEaBq', 11, 0),
-('PALOMIX', 'Albacete', 123456789, 'palomasanx@gmail.com', '$2y$10$DBlxUkbeEAvjEs3gOeHxsOm9XVmK4rehMDsmWX1Bw84.5ow646mFa', 12, 0);
+INSERT INTO `cliente` (`nombre`, `ciudad`, `telefono`, `correo`, `contrasena`, `id_cliente`, `administrador`, `token`) VALUES
+('paloma', 'Cuenca', 666222333, 'paloma@gmail.com', '$2y$10$9nF1PXH9T/7ECebeaAKpruUhbXxt6C3WwVWoqvZKvM4aItiLSx/5e', 1, 1, ''),
+('Pepe', 'Albacete', 666222111, 'pepe@gmail.com', '$2y$10$2LVmQLvNmFN6R2fhX.b4UeQAgJeYghYQqRoRXGUkL1qA9a95HrqfK', 9, 0, ''),
+('PALOMIX', 'Albacete', 123456789, 'palomasanx@gmail.com', '$2y$10$lInvGBSlK99ZZEdg6OPBBuk3sMR8DYK/k/9uaxj/qEzn8UgCSsjPi', 12, 0, '5ee43e1d46bee3ea324bc490356aed63');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `detallepedido`
+--
+
+CREATE TABLE `detallepedido` (
+  `id_detalle` int(11) NOT NULL,
+  `id_pedido` int(11) NOT NULL,
+  `id_serv` int(11) NOT NULL,
+  `precioUnitario` decimal(20,2) NOT NULL,
+  `cantidad` int(11) NOT NULL,
+  `descargado` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -87,7 +101,10 @@ INSERT INTO `servicio` (`nombre`, `id_servicio`, `precio`, `descripcion`, `image
 ('CBmayor', 1, 25, 'Chatbot destinado a personas mayores', 'mayor.png'),
 ('CBjoven', 2, 30, 'Chatbot destinado a un público joven', 'joven.png'),
 ('CBgeneral', 3, 35, 'Chatbot destinado a un público general', 'general.png'),
-('CBeCommerce', 4, 50, 'Chatbot destinado a empresas', 'ecommerce.png');
+('CBeCommerce', 4, 50, 'Chatbot destinado a empresas', 'ecommerce.png'),
+('HBtraductor', 5, 10, 'Incluye la habilidad de traducir a tu Chatbot', 'english.png'),
+('HBmatemáticas', 6, 10, 'Incluye la habilidad de cálculo a tu Chatbot', 'maths.png'),
+('HBalarma', 7, 10, 'Incluye la habilidad de alarma a tu Chatbot', 'alarm.png');
 
 --
 -- Índices para tablas volcadas
@@ -100,6 +117,14 @@ ALTER TABLE `cliente`
   ADD PRIMARY KEY (`id_cliente`),
   ADD UNIQUE KEY `correo` (`correo`),
   ADD UNIQUE KEY `correo_2` (`correo`);
+
+--
+-- Indices de la tabla `detallepedido`
+--
+ALTER TABLE `detallepedido`
+  ADD PRIMARY KEY (`id_detalle`),
+  ADD KEY `id_pedido` (`id_pedido`),
+  ADD KEY `id_serv` (`id_serv`);
 
 --
 -- Indices de la tabla `pedido`
@@ -122,23 +147,36 @@ ALTER TABLE `servicio`
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT de la tabla `detallepedido`
+--
+ALTER TABLE `detallepedido`
+  MODIFY `id_detalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
 
 --
 -- AUTO_INCREMENT de la tabla `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `id_pedido` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_pedido` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `servicio`
 --
 ALTER TABLE `servicio`
-  MODIFY `id_servicio` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_servicio` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `detallepedido`
+--
+ALTER TABLE `detallepedido`
+  ADD CONSTRAINT `detallepedido_ibfk_1` FOREIGN KEY (`id_pedido`) REFERENCES `pedido` (`id_pedido`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `detallepedido_ibfk_2` FOREIGN KEY (`id_serv`) REFERENCES `servicio` (`id_servicio`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `pedido`
