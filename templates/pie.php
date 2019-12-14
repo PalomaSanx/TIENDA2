@@ -15,7 +15,7 @@
 
     <!-- Content -->
     <h5 class="text-uppercase">TACHBOT <img src="<?php echo url ;?>/img/Logo.png" alt="" width="5%" /></h5>
-    <p>Here you can use rows and columns to organize your footer content.</p>
+    <p>Desde 1900 trabajando por ayudar a las personas...</p>
 
     <ul class="list-unstyled">
       <li>

@@ -177,34 +177,34 @@ include 'templates/cabecera_anteslogin.php';
 <!-- section: works -->
 <section id="works" class="section">
     <div class="container clearfix">
-        <h4>Aviso legal</h4>
+        <h4>Habilidades Chatbot</h4>
         <!-- portfolio filter -->
         <div class="row">
             <div id="filters" class="span12">
                 <ul class="clearfix">
                     <li>
                         <a href="#" data-filter="*" class="active">
-                            <h5>All</h5>
+                            <h5>Cálculo</h5>
                         </a>
                     </li>
                     <li>
                         <a href="#" data-filter=".web">
-                            <h5>Web</h5>
+                            <h5>Traductor</h5>
                         </a>
                     </li>
                     <li>
                         <a href="#" data-filter=".print">
-                            <h5>Print</h5>
+                            <h5>Agenda</h5>
                         </a>
                     </li>
                     <li>
                         <a href="#" data-filter=".design">
-                            <h5>Design</h5>
+                            <h5>Alarma</h5>
                         </a>
                     </li>
                     <li>
                         <a href="#" data-filter=".photography">
-                            <h5>Photography</h5>
+                            <h5>Ayuda</h5>
                         </a>
                     </li>
                 </ul>
@@ -446,18 +446,8 @@ include 'templates/cabecera_anteslogin.php';
         </div>
     </div>
 </section>
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="span6 offset3">
-                <p class="copyright">
-                    &copy; Tachbot 2019.
 
-                </p>
-            </div>
-        </div>
-    </div>
-</footer>
+<?php include 'templates/pie.php';?>
 
 <script src="js/jquery.js"></script>
 <script src="js/jquery.scrollTo.js"></script>
