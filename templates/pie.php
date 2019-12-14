@@ -39,16 +39,16 @@
 
     <ul class="list-unstyled">
       <li>
-        <a href="#!">Aviso de privacidad</a>
+        <a href="<?php echo url ;?>/vista/privacidad.php">Aviso de privacidad</a>
       </li>
       <li>
-        <a href="#!">Área legal</a>
+        <a href="<?php echo url ;?>/vista/privacidad.php">Área legal</a>
       </li>
       <li>
-        <a href="#!">Cookies</a>
+        <a href="<?php echo url ;?>/vista/privacidad.php">Cookies</a>
       </li>
       <li>
-        <a href="#!">Condiciones de uso y venta</a>
+        <a href="<?php echo url ;?>/vista/privacidad.php">Condiciones de uso y venta</a>
       </li>
     </ul>
 

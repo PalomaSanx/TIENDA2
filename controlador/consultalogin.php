@@ -23,7 +23,7 @@ require_once "../controlador/recaptchalib.php";
 
 
 
-if (isset($_SESSION['usuario'])) { /* Comrpobamos si la sesión estaba iniciada */
+if (isset($_SESSION['correo'])) { /* Comrpobamos si la sesión estaba iniciada */
 	echo '<p> Sesión iniciada previamente </p>';
 	header('Location:../indexLogin.php');
 }

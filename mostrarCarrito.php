@@ -9,7 +9,7 @@ include 'templates/cabecera.php';
     if (!isset($_SESSION['correo'])) {
         echo '<div align="center" class="card">';
         echo 'ERROR!! debe registrarse: <a href="vista/login.php"> Iniciar sesión </a> </div>';
-        echo '<br>';
+        echo '<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>';
     } else { //si la sesión existe 
         if (isset($_SESSION['ultimoAcceso'])) { //comprueba que no haya pasado x tiempo desde la sesion
             $ahora = time();

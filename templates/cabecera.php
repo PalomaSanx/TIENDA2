@@ -19,7 +19,7 @@
     <!--Navegación-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="indexLogin.php">
+            <a class="navbar-brand" href="<?php echo url ;?>/indexLogin.php">
                  <img src="<?php echo url ;?>/img/Logo.png" alt="" width="5%" />
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
