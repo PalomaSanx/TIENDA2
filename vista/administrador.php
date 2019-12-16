@@ -49,6 +49,11 @@ include '../templates/cabecera_admin.php';
             echo '<div class="card">';
                 echo '<input class="btn btn-primary" type="submit" name="" value="Eliminar servicio XML (XML)" onclick="eliminar();">';
             echo '</div>';
+
+            echo '<div class="card">';
+            echo '<input class="btn btn-primary" type="submit" name="" value="Analytics Dashboard" onclick="goanalytics()">';
+            echo '</div>';
+
             echo '<form action="administrador.php" method="POST">
                     <br><input type="submit" name="limpiar" value="Limpiar" class="btn btn-primary" id="limpiar" />
                     </form>';
@@ -170,3 +175,9 @@ function eliminar() {
 </script>
 
 
+<script>
+function goanalytics()
+{
+     location.href = "../vista/dashboard.php";
+} 
+</script>

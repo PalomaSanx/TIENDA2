@@ -85,6 +85,6 @@ include 'templates/cabecera.php';
         });
         </script>
 
-<script src="https://account.snatchbot.me/script.js"></script><script>window.sntchChat.Init(74039)</script> 
+<script src="https://account.snatchbot.me/script.js"></script><script>window.sntchChat.Init(84674)</script> 
         
 <?php include 'templates/pie.php';?>

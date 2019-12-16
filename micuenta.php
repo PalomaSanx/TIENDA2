@@ -25,7 +25,7 @@ include 'templates/cabecera.php';
                 window.location.assign("vista/login.php"); </script>';
             }
         }
-        echo '<div align="center" class="card" style="background-color:lightblue">';
+        echo '<div align="center">';
         echo '
         <div class="row" >
             <div class="col-sm-3" >
@@ -33,7 +33,7 @@ include 'templates/cabecera.php';
                     <img src=img/usuario.jpg style="width:30%">
                     <a href="vista/formularioModDatos.php">Modificacion datos</a>
                     <a href="controlador/consultaProductos.php">Mis pedidos</a>
-                    <a href="vista/ayuda.html">Ayuda</a>
+                    <a href="vista/ayuda.php">Ayuda</a>
                 </div>
             </div>        
             <div class="col-sm-9" >
@@ -46,6 +46,11 @@ include 'templates/cabecera.php';
     }
     ?>
     </div>
+    <br> 
+        <br> 
+        <br> 
+        <br>
+        <br>
 </body>
 
 </html>
